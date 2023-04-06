@@ -24,7 +24,7 @@ steps:
   inputs:
     command: 'build'
     projects: 'DotnetTemplate.Tests/*.csproj'
-    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactsstagingdirectory)'
+    arguments: '$(build.artifactstagingdirectory)'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
