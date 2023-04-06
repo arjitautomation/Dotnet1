@@ -23,7 +23,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
-    projects: '$/Dotnet1/DotnetTemplate/*.csproj'
+    projects: 'DotnetTemplate/*.csproj'
     restoreArguments: '$(buildConfiguration)'
     feedsToUse: 'select'
 
