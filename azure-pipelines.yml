@@ -31,11 +31,6 @@ steps:
     command: 'build'
     projects: '$(System.DefaultWorkingDirectory)/Dotnet1/DotnetTemplate/DotnetTemplate.csproj'
     arguments: '$(BuildConfiguration)'
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'publish'
-    publishWebProjects: true
-    arguments: '$(BuildConfiguration)'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
