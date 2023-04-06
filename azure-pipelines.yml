@@ -24,12 +24,12 @@ steps:
   inputs:
     command: 'build'
     projects: '**/Dotnet1/DotnetTemplate.Tests/*.csproj'
-    arguments: '$(build.artifactstagingdirectory)'
+    arguments: '--configuration $(BuildConfiguration)'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
     publishWebProjects: true
-    arguments: '$(Build.ArtifactStagingDirectory)'
+    arguments: '--configuration $(BuildConfiguration)'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
