@@ -23,7 +23,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: 'DotnetTemplate.Tests/*.csproj'
+    projects: 'Dotnet1/DotnetTemplate.Tests/*.csproj'
     arguments: '$(build.artifactstagingdirectory)'
 - task: DotNetCoreCLI@2
   inputs:
