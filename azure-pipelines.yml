@@ -30,7 +30,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '$/Dotnet1/DotnetTemplate/.csproj'
+    projects: '/DotnetTemplate/DotnetTemplate.csproj'
     arguments: '$(BuildConfiguration)'
 - task: VSBuild@1
   inputs:
