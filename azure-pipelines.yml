@@ -22,14 +22,20 @@ steps:
     restoreSolution: '$(solution)'
 - task: DotNetCoreCLI@2
   inputs:
+    command: 'restore'
+    projects: '$(System.DefaultWorkingDirectory)/Dotnet1/DotnetTemplate.Tests/*.csproj'
+    restoreArguments: '$(buildConfiguration)'
+    feedsToUse: 'select'
+- task: DotNetCoreCLI@2
+  inputs:
     command: 'build'
-    projects: '**/Dotnet1/DotnetTemplate.Tests/*.csproj'
-    arguments: '--configuration $(BuildConfiguration)'
+    projects: '$(System.DefaultWorkingDirectory)/Dotnet1/DotnetTemplate.Tests/*.csproj'
+    arguments: '$(BuildConfiguration)'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
     publishWebProjects: true
-    arguments: '--configuration $(BuildConfiguration)'
+    arguments: '$(BuildConfiguration)'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
