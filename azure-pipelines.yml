@@ -23,14 +23,14 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
-    projects: '**/*Dotnet1/DotnetTemplate/*.csproj'
+    projects: '$/Dotnet1/DotnetTemplate/*.csproj'
     restoreArguments: '$(buildConfiguration)'
     feedsToUse: 'select'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '**/*Dotnet1/DotnetTemplate/.csproj'
+    projects: '$/Dotnet1/DotnetTemplate/.csproj'
     arguments: '$(BuildConfiguration)'
 - task: VSBuild@1
   inputs:
