@@ -22,8 +22,8 @@ steps:
     restoreSolution: '$(solution)'
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'publish'
-    publishWebProjects: true
+    command: 'build'
+    projects: 'DotnetTemplate.Tests/*.csproj'
     arguments: '--configuration $(BuildConfiguration) --output $(build.artifactsstagingdirectory)'
 - task: VSBuild@1
   inputs:
